@@ -15,18 +15,17 @@
                     eveniet vel nostrum magnam
                     voluptatum tempore! Consectetur, id commodi!</p>
                 <div class="search">
-                    <form action="search.html">
+                    <form action="{% url 'search' %}">
                         <!-- Form Row 1 -->
                         <div class="form-row">
 
                             <div class="col-md-4 mb-3">
                                 <label class="sr-only">City</label>
-                                <select name="state" class="form-control">
+                                <select name="city" class="form-control">
                                     <option selected="true" disabled="disabled">City (All)</option>
-                                    <option value="AL">Pune</option>
-                                    <option value="AK">Banglore</option>
-                                    <option value="AZ">Mumbai</option>
-                                    <option value="AR">Delhi</option>
+                                    {% for key, value in city_choices.items %}
+                                        <option value="{{ key }}">{{ value }}</option>
+                                    {% endfor %}
                                 </select>
                             </div>
 
@@ -38,12 +37,11 @@
 
                             <div class="col-md-4 mb-3">
                                 <label class="sr-only">Category</label>
-                                <select name="state" class="form-control">
+                                <select name="category" class="form-control">
                                     <option selected="true" disabled="disabled">Category (All)</option>
-                                    <option value="AL">Alabama</option>
-                                    <option value="AK">Alaska</option>
-                                    <option value="AZ">Arizona</option>
-                                    <option value="AR">Arkansas</option>
+                                    {% for key, value in category_choices.items %}
+                                        <option value="{{ key }}">{{ value }}</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
