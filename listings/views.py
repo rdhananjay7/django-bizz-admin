@@ -63,5 +63,6 @@ def search(request):
         'category_choices': category_choices,
         'city_choices' : city_choices,
         'listings' : queryset_list,
+        'values' : request.GET,
     }
     return render(request, 'listings/search.html', context)
