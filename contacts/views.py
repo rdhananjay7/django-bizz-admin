@@ -12,7 +12,7 @@ def contact(request):
     phone = request.POST['phone']
     message = request.POST['message']
     user_id = request.POST['user_id']
-    listing_email = request.POST['listing_email']
+    #listing_email = request.POST['listing_email']
 
     #  Check if user has made inquiry already
     if request.user.is_authenticated:
@@ -31,7 +31,7 @@ def contact(request):
     #   'Property Listing Inquiry',
     #   'There has been an inquiry for ' + listing + '. Sign into the admin panel for more info',
     #   'traversy.brad@gmail.com',
-    #   [realtor_email, 'techguyinfo@gmail.com'],
+    #   [listing_email, 'techguyinfo@gmail.com'],
     #   fail_silently=False
     # )
 
